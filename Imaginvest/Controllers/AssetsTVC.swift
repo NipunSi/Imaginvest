@@ -24,6 +24,9 @@ class AssetsTVC: UITableViewController {
         self.title = portfolio?.name
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(enterAsset))
         
+        self.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
+
+        
         getAssets()
     }
     
@@ -206,6 +209,13 @@ class AssetsTVC: UITableViewController {
         let formatter1 = DateFormatter()
         formatter1.dateFormat = "YYYYMMdd"
         return formatter1.string(from: date)
+    }
+    
+    @objc func refresh(sender:AnyObject) {
+        getAssets()
+        
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
     }
     
     // MARK: - Table view data source

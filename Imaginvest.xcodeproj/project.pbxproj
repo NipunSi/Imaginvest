@@ -15,6 +15,7 @@
 		4202DF332683CDE500F91E10 /* AssetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202DF322683CDE500F91E10 /* AssetCell.swift */; };
 		4202DF382683D0D400F91E10 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202DF372683D0D400F91E10 /* Company.swift */; };
 		4202DF3D26840A6A00F91E10 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202DF3C26840A6A00F91E10 /* Stats.swift */; };
+		4202DF4226842E6D00F91E10 /* PortfolioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202DF4126842E6D00F91E10 /* PortfolioCell.swift */; };
 		421144932682909800FC26A8 /* OldPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421144922682909800FC26A8 /* OldPrice.swift */; };
 		4211449B2682949400FC26A8 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4211449A2682949400FC26A8 /* Networking.swift */; };
 		42D0C7F82682877100360159 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0C7F72682877100360159 /* AppDelegate.swift */; };
@@ -54,6 +55,7 @@
 		4202DF322683CDE500F91E10 /* AssetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCell.swift; sourceTree = "<group>"; };
 		4202DF372683D0D400F91E10 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		4202DF3C26840A6A00F91E10 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		4202DF4126842E6D00F91E10 /* PortfolioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCell.swift; sourceTree = "<group>"; };
 		421144922682909800FC26A8 /* OldPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldPrice.swift; sourceTree = "<group>"; };
 		4211449A2682949400FC26A8 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		42D0C7F42682877100360159 /* Imaginvest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Imaginvest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 				4202DF322683CDE500F91E10 /* AssetCell.swift */,
 				4202DF372683D0D400F91E10 /* Company.swift */,
 				4202DF3C26840A6A00F91E10 /* Stats.swift */,
+				4202DF4126842E6D00F91E10 /* PortfolioCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				4202DF142682B1A800F91E10 /* Asset.swift in Sources */,
 				42D0C7F82682877100360159 /* AppDelegate.swift in Sources */,
 				4202DF3D26840A6A00F91E10 /* Stats.swift in Sources */,
+				4202DF4226842E6D00F91E10 /* PortfolioCell.swift in Sources */,
 				4202DF202682B20600F91E10 /* Portfolio+CoreDataClass.swift in Sources */,
 				421144932682909800FC26A8 /* OldPrice.swift in Sources */,
 				4211449B2682949400FC26A8 /* Networking.swift in Sources */,

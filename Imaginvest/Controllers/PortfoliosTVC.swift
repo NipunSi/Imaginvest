@@ -14,12 +14,17 @@ class PortfoliosTVC: UITableViewController {
     var portfolios = [Portfolio]()
     var selectedPort: Portfolio?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Portfolios"
+        self.title = "My Portfolios"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPortfolio))
         
+        self.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         getAllPortfolios()
     }
     
@@ -76,6 +81,14 @@ class PortfoliosTVC: UITableViewController {
         present(alert, animated: true)
         
     }
+    
+    @objc func refresh(sender:AnyObject) {
+
+        getAllPortfolios()
+        
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
+    }
 
     // MARK: - Table view data source
 
@@ -86,27 +99,16 @@ class PortfoliosTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return portfolios.count
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "portfolioCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "portfolioCell", for: indexPath) as! PortfolioCell
         
-        let port = portfolios[indexPath.row]
-        cell.textLabel?.text = port.name
-        
-        if let allAssets = port.assets {
-            do {
-                
-                let assets = try JSONDecoder().decode([Asset].self, from: allAssets)
-                cell.detailTextLabel?.text = "\((assets.count)) Assets"
-                
-            } catch {
-                print("Error decoding assets count: \(error)")
-                cell.detailTextLabel?.text = "0 Assets"
-            }
-        } else {
-            cell.detailTextLabel?.text = "0 Assets"
-        }
+        cell.port = portfolios[indexPath.row]
         
         return cell
     }
